@@ -1,13 +1,17 @@
 import './App.css';
-import { HeaderBarDemo } from './LandingPage/HeaderBarDemo';
+import { HeaderBar } from './LandingPage/HeaderBar/HeaderBar';
+import MainLayout from './LandingPage/components/MainLayout/MainLayout';
 
 function App() {
   return (
     <div className="App">
-      <HeaderBarDemo/>
-      <header className="App-header">
+      <HeaderBar/>
+      <MainLayout>
         <h1>Hello World</h1>
-      </header>
+        <main>
+          <h2>This is the main section</h2>
+        </main>
+      </MainLayout>
     </div>
   );
 }

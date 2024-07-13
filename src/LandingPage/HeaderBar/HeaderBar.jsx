@@ -1,19 +1,13 @@
-import * as React from 'react';
-import { useState } from 'react';
-import { styled, alpha } from '@mui/material/styles';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import InputBase from '@mui/material/InputBase';
-import MenuIcon from '@mui/icons-material/Menu';
-import SearchIcon from '@mui/icons-material/Search';
+import React from 'react'
+import { AppBar, Box, Toolbar, Typography, InputBase  } from '@mui/material';
+import { styled, alpha } from '@mui/material';
+import { Search } from '@mui/icons-material';
+import { MenuButton } from '../components/MenuButton/MenuButton';
 
-const Search = styled('div')(({ theme }) => ({
+const SearchWrapper = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
-  backgroundColor: alpha(theme.palette.common.black, 0.15),
+  backgroundColor: 'grey',
   '&:hover': {
     backgroundColor: alpha(theme.palette.common.white, 0.25),
   },
@@ -45,35 +39,19 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     transition: theme.transitions.create('width'),
     [theme.breakpoints.up('sm')]: {
       width: '12ch',
-      '&:focus': {
-        width: '20ch',
-      },
     },
   },
 }));
 
-
-
-export const HeaderBarDemo = () => {
-  const [searchChanged, setSearchChanged] = useState(false);
-
-  const handleBrokenSearch = () => {
-    setSearchChanged(true);
-  };
-
+export const HeaderBar = () => {
+  const handleBrokenChange = () => {
+    console.log('search')
+  }
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar color="transparent" position="static">
+    <Box sx={{flexGrow: 1}}>
+      <AppBar sx={{ backgroundColor: 'white', color: '#282c34'}}>
         <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="open drawer"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton>
+          <MenuButton />
           <Typography
             variant="h6"
             noWrap
@@ -82,18 +60,18 @@ export const HeaderBarDemo = () => {
           >
             Ben Goodwin Kitchen Sink
           </Typography>
-          <Search>
+          <SearchWrapper>
             <SearchIconWrapper>
-              <SearchIcon />
+              <Search />
             </SearchIconWrapper>
             <StyledInputBase
-              onChange={handleBrokenSearch}
+              onChange={handleBrokenChange}
               placeholder="Search…"
               inputProps={{ 'aria-label': 'search' }}
             />
-          </Search>
+          </SearchWrapper>
         </Toolbar>
       </AppBar>
     </Box>
-  );
-}
+  )
+};

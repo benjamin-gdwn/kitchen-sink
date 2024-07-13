@@ -6,7 +6,7 @@ export const MainLayout = ({children}) => {
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
   return (
-    <Box className='App-body' >
+    <Box role='main' className='App-body' >
       <Box sx={{ maxWidth: !isMobile ? '960px' : ''}}>
         {children}
       </Box>

@@ -1,8 +1,7 @@
-import React from 'react'
 import { AppBar, Box, Toolbar, Typography, InputBase  } from '@mui/material';
 import { styled, alpha } from '@mui/material';
 import { Search } from '@mui/icons-material';
-import { MenuButton } from '../components/MenuButton/MenuButton';
+import { MenuButton } from '../MenuButton/MenuButton';
 
 const SearchWrapper = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -49,7 +48,7 @@ export const HeaderBar = () => {
   }
   return (
     <Box sx={{flexGrow: 1}}>
-      <AppBar sx={{ backgroundColor: 'white', color: '#282c34'}}>
+      <AppBar role="banner" sx={{ backgroundColor: 'white', color: '#282c34'}}>
         <Toolbar>
           <MenuButton />
           <Typography

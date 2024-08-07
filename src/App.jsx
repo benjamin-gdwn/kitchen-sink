@@ -1,6 +1,6 @@
 import './App.css';
-import { LandingPage } from './LandingPage';
-import { HeaderBar } from './LandingPage/HeaderBar/HeaderBar';
+import { LandingPage } from './LandingPage/index';
+import { HeaderBar } from './LandingPage/components/HeaderBar/HeaderBar';
 
 function App() {
   return (

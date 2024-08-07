@@ -39,8 +39,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     [theme.breakpoints.up('sm')]: {
       width: '12ch',
     },
-  },
-}));
+  }
+}))
 
 export const HeaderBar = () => {
   const handleBrokenChange = () => {

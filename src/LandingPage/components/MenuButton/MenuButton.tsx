@@ -5,11 +5,11 @@ import { MenuRounded } from '@mui/icons-material';
 import MenuItem from '@mui/material/MenuItem';
 
 export const MenuButton = ()=> {
-  const [anchorEl, setAnchorEl] = useState(null);
+  const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
 
   const open = anchorEl ? true : false;
 
-  const handleClick = (event) => {
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     setAnchorEl(event.currentTarget);
   };
 
@@ -25,7 +25,6 @@ export const MenuButton = ()=> {
         aria-haspopup="true"
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
-        icon
       >
         <MenuRounded />
       </IconButton>

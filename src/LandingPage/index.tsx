@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import { MainLayout } from '../LandingPage/components/MainLayout/MainLayout';
+import { MainLayout } from './components/MainLayout/MainLayout';
 
 export const LandingPage = () => {
   const x = '';
